@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление пользователя</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-3 d-flex flex-column">
+                <h2 class="text-center">Добавить пользователя</h2>
+    
+                <label for="name">Имя:</label>
+                <input type="text" id="name" placeholder="Введите имя">
+                
+                <label for="age">Возраст:</label>
+                <input type="number" id="age" placeholder="Введите возраст">
+                
+                <button onclick="addUser()">Добавить</button>
+                
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+   
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

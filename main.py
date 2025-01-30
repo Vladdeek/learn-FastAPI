@@ -10,6 +10,19 @@ from schemas import UserCreate, User as DbUser, PostCreate, Post as DbPost # "as
 
 app = FastAPI()
 
+# Импортируем CORSMiddleware для разрешения кросс-доменных запросов
+# CORS (Cross-Origin Resource Sharing) нужно, чтобы фронтенд с другого домена/порта мог отправлять запросы на наш сервер
+from fastapi.middleware.cors import CORSMiddleware
+
+# Разрешаем все источники для теста
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Разрешаем все источники
+    allow_credentials=True,
+    allow_methods=["*"],  # Разрешаем все методы (GET, POST, и т.д.)
+    allow_headers=["*"],  # Разрешаем все заголовки
+)
+
 Base.metadata.create_all(bind=engine)
 
 # функция создает сессию для подключения к ДБ
