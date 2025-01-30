@@ -10,10 +10,6 @@ class UserCreate(UserBase):
 
 class User(UserBase):
     id: int
-    class config():
-        orm_mode=True
-
-
     class Config:
         orm_mode = True
     
@@ -26,12 +22,6 @@ class PostBase(BaseModel):
 
 class PostCreate(PostBase):
     pass
-
-class PostResponse(PostBase):
-    id: int
-    author: User
-    class config():
-        orm_mode=True
 
 class Post(PostBase):
     id: int 
