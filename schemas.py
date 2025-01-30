@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+#User 
 class UserBase(BaseModel):
     name: str
     age: int
@@ -12,6 +13,12 @@ class User(UserBase):
     class config():
         orm_mode=True
 
+
+    class Config:
+        orm_mode = True
+    
+
+#Post
 class PostBase(BaseModel):
     title: str
     body: str
@@ -25,3 +32,16 @@ class PostResponse(PostBase):
     author: User
     class config():
         orm_mode=True
+
+class Post(PostBase):
+    id: int 
+    author: User
+    class Config:
+        orm_mode = True
+
+
+
+# Здесь описаны различные схемы,
+# нужны для описания API
+# нужны для описания того что мы будем принимать
+# и что мы будем принимать 
